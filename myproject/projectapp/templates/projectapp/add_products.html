@@ -1,0 +1,71 @@
+{% extends 'projectapp/base.html' %}
+
+
+{% block content %}
+<div class="panel-heading">添加产品</div>
+<div class="panel-body">
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <form method="POST" action="{% url 'projectapp:add_product' %}">
+                {% csrf_token %}
+                <table style="width: 700px">
+                    <tr style="height: 60px">
+                        <td style="text-align: left">
+                            <label for="title">产品名称:</label>
+                        </td>
+                        <td style="text-align: center">
+                            <input style="width: 150px;" type="text" class="form-control" id="pro_name" name="pro_name" placeholder="请输入产品名称">
+
+                        </td>
+                        <td style="text-align: left">
+                            <label for="title">产品代码:</label>
+                        </td>
+                        <td style="text-align: center">
+                            <input style="width: 150px;" type="text" class="form-control" id="pro_code" name="pro_code" placeholder="请输入产品代码">
+
+                        </td>
+                    </tr>
+                    <tr style="height: 60px">
+                        <td style="text-align: left">
+                            <label for="title">产品类别:</label>
+                        </td>
+                        <td >
+                            <select name="product_type">
+                                <option>--请选择产品类别--</option>
+
+                                <option value="精品">精品</option>
+                                <option value="轮胎">轮胎</option>
+                                <option value="耗材">耗材</option>
+
+                            </select>
+
+                        </td>
+                        <td style="text-align: left">
+                            <label for="title">产品单价:</label>
+                        </td>
+                        <td style="text-align: center">
+                            <input style="width: 150px;" type="text" class="form-control" id="pro_price" name="pro_price" placeholder="请输入单价">
+                        </td>
+                    </tr>
+                    <tr style="height: 60px">
+                        <td style="text-align: left">
+                            <label for="title">产品库位:</label>
+                        </td>
+                        <td style="text-align: center">
+                            <input style="width: 150px;" type="text" class="form-control" id="pro_kuwei" name="pro_kuwei" placeholder="请输入库位">
+                        </td>
+                    </tr>
+                </table>
+                <div class="form-group">
+                    <label for="content">备注</label>
+                    <textarea class="form-control" id="content" name="content" rows="7"
+                              placeholder="请备注产品内容"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">添加产品</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+

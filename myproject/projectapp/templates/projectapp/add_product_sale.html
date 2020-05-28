@@ -1,0 +1,65 @@
+{% extends 'projectapp/base.html' %}
+
+
+{% block content %}
+<div class="panel-heading">产品销售</div>
+<div class="panel-body">
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <form method="POST" action="">
+                {% csrf_token %}
+                <table style="width: 700px">
+                    <tr style="height: 60px">
+                        <td style="text-align: left">
+                            <label for="title">客户姓名:</label>
+                        </td>
+                        <td style="text-align: center">
+                            <input style="width: 150px;" type="text" class="form-control" id="name" name="name" placeholder="请输入客户姓名">
+
+                        </td>
+                        <td style="text-align: left">
+                            <label for="title">客户手机:</label>
+                        </td>
+                        <td style="text-align: center">
+                            <input style="width: 150px;" type="text" class="form-control" id="phone_number" name="phone_number" placeholder="请输入客户手机">
+
+                        </td>
+                    </tr>
+                    <tr style="height: 60px">
+                        <td style="text-align: left">
+                            <label for="title">销售单价:</label>
+                        </td>
+                        <td >
+                            <input style="width: 150px;" type="text" class="form-control" id="sale_price" name="sale_price" placeholder="请输入销售单价">
+
+
+                        </td>
+                        <td style="text-align: left">
+                            <label for="title">销售数量:</label>
+                        </td>
+                        <td style="text-align: center">
+                            <input style="width: 150px;" type="text" class="form-control" id="sale_number" name="sale_number" placeholder="请输入销售数量">
+                        </td>
+                    </tr>
+                    <tr style="height: 60px">
+                        <td style="text-align: left">
+                            <label for="title">合计金额:</label>
+                        </td>
+                        <td style="text-align: center">
+                            <input style="width: 150px;" type="text" class="form-control" id="total_money" name="total_money" placeholder="合计金额">
+                        </td>
+                    </tr>
+                </table>
+                <div class="form-group">
+                    <label for="content">备注</label>
+                    <textarea class="form-control" id="pro_info" name="pro_info" rows="7"
+                              placeholder="请备注内容"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">添加</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
