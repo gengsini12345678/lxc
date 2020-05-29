@@ -24,7 +24,6 @@ urlpatterns = [
     # 删除产品
     url(r'^(?P<pro_id>\d+)/delete_porduct/$', views.delete_porduct, name="delete_porduct"),
 
-
     # 搜索产品
     url(r'^search/$', views.search, name="search"),
 
@@ -32,8 +31,8 @@ urlpatterns = [
     url(r'^add_product_sale/$', views.add_product_sale, name="add_product_sale"),
 
     url(r'^sale_list/$', views.sale_list, name="sale_list"),
-    url(r'^search_sale/$', views.search_sale, name="search_sale"),
 
+    url(r'^search_sale/$', views.search_sale, name="search_sale"),
 
     url(r'^(?P<pro_id>\d+)/delete_sale/$', views.delete_sale, name="delete_sale"),
 

@@ -14,8 +14,6 @@ def index(request):
     '''
     if request.method == 'GET':
         return render(request, 'projectapp/index.html')
-    elif request.method == 'POST':
-        pass
 
 
 def register(request):
@@ -110,7 +108,8 @@ def add_product(request):
         content = request.POST.get('content')
         user = request.session['login_user']
         productadmin = models.ProductAdmin(pro_code=pro_code, pro_kuwei=pro_kuwei, pro_name=pro_name,
-                                           pro_price=pro_price, pro_type=product_type, pro_intro=content, user=user)
+                                           pro_price=pro_price, pro_type=product_type, pro_intro=content,
+                                           user=user)
         productadmin.save()
         request.session['productadmin'] = productadmin
         return redirect(reverse("projectapp:product_info", kwargs={'id': productadmin.id}))
@@ -307,7 +306,6 @@ def logout(request):
     :param request:
     :return:
     '''
-
     try:
         del request.session['login_user']
         return render(request, 'projectapp/login.html', {})
